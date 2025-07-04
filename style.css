@@ -1,0 +1,236 @@
+/* CSS for the Event Countdown and RSVP Page */
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #050301;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url("Images/download\ \(14\).jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.8); /* Fallback color */
+}
+
+body::before {
+  content: "";
+  /* If you want an overlay, use position: fixed or absolute, not flex */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgba(76, 175, 80, 0.6);
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.event-details {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.countdown {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 30px 0;
+  padding: 15px 10px;
+  background: rgba(76, 175, 80, 0.6);
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.countdown span {
+  display: inline-block;
+  margin: 0 5px;
+  min-width: 50px;
+  font-weight: bold;
+}
+
+.rsvp-form {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Add to your style.css */
+.event-details-slideshow {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  min-height: 80px;
+  text-align: center;
+}
+.event-slide {
+  display: none;
+  font-size: 1.1em;
+}
+.event-slide.active {
+  display: block;
+}
+.slide-btn {
+  margin: 10px 5px 0 5px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(76, 175, 80, 0.6);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+}
+.slide-btn:hover {
+  background: rgba(69, 160, 73, 0.8);
+}
+
+/* ...existing code... */
+.event-images-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+/* ...existing code... */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  30% {
+    transform: translateY(-20px);
+    box-shadow: 0 12px 24px rgba(76, 175, 80, 0.25);
+  }
+  50% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  70% {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(76, 175, 80, 0.18);
+  }
+  90% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.event-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15%;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex: 0 0 calc(25% - 12px); /* 4 per row with gap */
+  max-width: 100px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.event-image:hover {
+  animation: bounce 0.7s;
+}
+/* ...existing code... */
+
+button {
+  background-color: rgba(76, 175, 80, 0.6);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: rgba(69, 160, 73, 0.8);
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #000;
+  font-size: 0.9em;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .countdown {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  .countdown span {
+    margin: 0 5px;
+    min-width: 50px;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+  button {
+    padding: 15px;
+  }
+}
